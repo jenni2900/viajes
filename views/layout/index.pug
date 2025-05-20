@@ -1,0 +1,40 @@
+doctype html
+
+// Comienza la estructura del documento HTML con el atributo de idioma en inglés
+html(lang="en")
+
+    // Encabezado del documento: <head>
+    head
+
+        // Define la codificación de caracteres del documento
+        meta(charset="UTF-8")
+
+        // Hace que el diseño sea responsive en dispositivos móviles
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        // Título dinámico que concatena el nombre del sitio y el nombre de la página
+        title #{nombresitio} | #{pagina}
+
+        // Importa dos fuentes de Google Fonts: Covered By Your Grace y Staatliches
+        link(href='https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Staatliches&display=swap' rel='stylesheet')
+
+        // Carga Bootstrap desde tu carpeta pública local
+        link(rel="stylesheet", href="/css/bootstrap.css")
+
+        // Carga tu archivo de estilos personalizados
+        link(rel="stylesheet", href="/css/style.css")
+
+    // Cuerpo del documento, aplicando una clase dinámica (útil para vistas distintas)
+    body(class= clase)
+
+        // Incluye el encabezado (header.pug) que contiene el logo y navegación
+        include header
+
+        // Define un bloque llamado "slider", útil para mostrar un carrusel en algunas páginas
+        block slider
+
+        // Define un bloque principal de contenido para insertar el contenido de cada vista
+        block contenido
+
+        // Incluye el pie de página (footer.pug)
+        include footer
